@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>React Native 0.60 Navigation 填坑 | BOBOCODING</title>
+  <title>React Native 国际化 | BOBOCODING</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="升级 RN0.60 Navigation 报错问题修改实例代码修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigator = Sta">
-<meta name="keywords" content="React Native 0.60">
+  <meta name="description" content="React Native i18n 实现国际化准备阶段：react-native-i18n 第三方多语言库安装: yarn add react-native-i18nreact-native-device-info 用户获取系统本地语言环境安装: yarn add react-native-device-info and react-native link react-native-device-">
+<meta name="keywords" content="React Native i18n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native 0.60 Navigation 填坑">
-<meta property="og:url" content="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/index.html">
+<meta property="og:title" content="React Native 国际化">
+<meta property="og:url" content="http://www.7seven.cn/2019/09/20/React-Native-国际化/index.html">
 <meta property="og:site_name" content="BOBOCODING">
-<meta property="og:description" content="升级 RN0.60 Navigation 报错问题修改实例代码修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigator = Sta">
+<meta property="og:description" content="React Native i18n 实现国际化准备阶段：react-native-i18n 第三方多语言库安装: yarn add react-native-i18nreact-native-device-info 用户获取系统本地语言环境安装: yarn add react-native-device-info and react-native link react-native-device-">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-20T05:23:46.656Z">
+<meta property="og:updated_time" content="2019-09-20T05:28:22.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native 0.60 Navigation 填坑">
-<meta name="twitter:description" content="升级 RN0.60 Navigation 报错问题修改实例代码修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigator = Sta">
+<meta name="twitter:title" content="React Native 国际化">
+<meta name="twitter:description" content="React Native i18n 实现国际化准备阶段：react-native-i18n 第三方多语言库安装: yarn add react-native-i18nreact-native-device-info 用户获取系统本地语言环境安装: yarn add react-native-device-info and react-native link react-native-device-">
   
     <link rel="alternate" href="/atom.xml" title="BOBOCODING" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-React-Native-0-60-Navigation-填坑" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-React-Native-国际化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/20/React-Native-0-60-Navigation-填坑/" class="article-date">
-  <time datetime="2019-09-20T01:59:42.000Z" itemprop="datePublished">2019-09-20</time>
+    <a href="/2019/09/20/React-Native-国际化/" class="article-date">
+  <time datetime="2019-09-20T05:22:22.000Z" itemprop="datePublished">2019-09-20</time>
 </a>
     
   <div class="article-category">
@@ -87,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React Native 0.60 Navigation 填坑
+      React Native 国际化
     </h1>
   
 
@@ -97,26 +97,32 @@
       
         <!-- Table of Contents -->
         
-        <h2 id="升级-RN0-60-Navigation-报错问题修改"><a href="#升级-RN0-60-Navigation-报错问题修改" class="headerlink" title="升级 RN0.60 Navigation 报错问题修改"></a>升级 RN0.60 Navigation 报错问题修改</h2><h3 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h3><p>修改前</p>
-<p>import {StackNavigator,TabNavigator} from ‘react-navigation’;</p>
-<p>import Home from “../pages/home”;//首页<br>import Details from “../pages/details”;//详情页</p>
-<p>const navigator = StackNavigator({<br>    Home: { screen: Home },<br>    Details: { screen: Details },<br>})</p>
-<p>export default navigator</p>
-<p>修改后</p>
-<p>import React from ‘react’;<br>import { createAppContainer } from ‘react-navigation’;<br>import { createStackNavigator } from ‘react-navigation-stack’;</p>
-<p>import Home from “../pages/home”;//首页<br>import Details from “../pages/details”;//详情页</p>
-<p>const navigator = createStackNavigator({<br>    Home: { screen: Home },<br>    Details: { screen: Details },<br>})</p>
-<p>const App = createAppContainer(navigator)</p>
-<p>export default App</p>
+        <h2 id="React-Native-i18n-实现国际化"><a href="#React-Native-i18n-实现国际化" class="headerlink" title="React Native i18n 实现国际化"></a>React Native i18n 实现国际化</h2><h3 id="准备阶段："><a href="#准备阶段：" class="headerlink" title="准备阶段："></a>准备阶段：</h3><p>react-native-i18n 第三方多语言库<br>安装: yarn add react-native-i18n<br>react-native-device-info 用户获取系统本地语言环境<br>安装: yarn add react-native-device-info and react-native link react-native-device-info</p>
+<h3 id="实践阶段："><a href="#实践阶段：" class="headerlink" title="实践阶段："></a>实践阶段：</h3><p>在项目中创建zh.js、en.js、I18n.js三个js文件；</p>
+<p>代码分别为：</p>
+<p>zh.js</p>
+<p>export default {<br>  english: ‘英文’,<br>  chinese: ‘中文’,<br>  changeToEnglish: ‘切换到英文’,<br>  changeToChinese: ‘切换到中文’,<br>  changeToSystem: ‘切换到系统语言’,<br>}</p>
+<p>en.js</p>
+<p>export default {<br>    english: ‘english’,<br>    chinese: ‘chinese’,<br>    changeToEnglish: ‘change to english’,<br>    changeToChinese: ‘change to chinese’,<br>    changeToSystem: ‘change to System’,<br>}</p>
+<p>I18n.js</p>
+<p>import I18n,{ getLanguages } from ‘react-native-i18n’<br>import DeviceInfo from ‘react-native-device-info’<br>import DataRepository from ‘../dao/DataRepository’<br>import en from ‘./en’<br>import zh from ‘./zh’</p>
+<p>I18n.defaultLocale = ‘en’;</p>
+<p>I18n.fallbacks = true;</p>
+<p>I18n.translations = {<br>    en,<br>    zh,<br>};</p>
+<p>I18n.localeLanguage = () =&gt; {<br>            I18n.locale = DeviceInfo.getDeviceLocale();<br>    return I18n.locale;</p>
+<p>};<br>export { I18n, getLanguages };</p>
+<p>使用：</p>
+<p>import i18n from ‘../language/i18n’;</p>
+<p>｛i18n.t(“english”)｝</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0roofdu0000ygqvnjm4r4nd" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-国际化/" data-id="ck0roofe60004ygqvqmtpd9zf" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native-0-60/">React Native 0.60</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native-i18n/">React Native i18n</a></li></ul>
 
     </footer>
   </div>
@@ -166,19 +172,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/09/20/React-Native-国际化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          React Native 国际化
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/20/React-Native-0-60-Navigation-填坑/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android EditText 第二次点击被键盘遮挡！</div>
+      <div class="article-nav-title">React Native 0.60 Navigation 填坑</div>
     </a>
   
 </nav>
@@ -212,7 +209,7 @@
       
         <strong class="toc-title">Content</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#升级-RN0-60-Navigation-报错问题修改"><span class="toc-number">1.</span> <span class="toc-text">升级 RN0.60 Navigation 报错问题修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例代码"><span class="toc-number">1.1.</span> <span class="toc-text">实例代码</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native-i18n-实现国际化"><span class="toc-number">1.</span> <span class="toc-text">React Native i18n 实现国际化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备阶段："><span class="toc-number">1.1.</span> <span class="toc-text">准备阶段：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实践阶段："><span class="toc-number">1.2.</span> <span class="toc-text">实践阶段：</span></a></li></ol></li></ol>
           </div>
       </div>
     </div>
