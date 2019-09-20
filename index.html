@@ -67,6 +67,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-面试锦集" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/20/面试锦集/" class="article-date">
+  <time datetime="2019-09-20T06:12:08.000Z" itemprop="datePublished">2019-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/面试题集合/">面试题集合</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/20/面试锦集/">面试锦集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><h3 id="1问：React-Native-的生命周期"><a href="#1问：React-Native-的生命周期" class="headerlink" title="1问：React Native 的生命周期"></a>1问：React Native 的生命周期</h3><p>代码实现：</p>
+<p>import React, {Component} from ‘react’<br>import {Text, View} from ‘react-native’<br>export default class Index extends Component {<br>    constructor(props) {<br>        super(props);<br>        console.log(‘1.constructor’);<br>    }<br>    componentWillMount(){<br>        console.log(‘2.componentWillMount’);<br>    }<br>    componentWillUpdate(){<br>        console.log(‘3.componentWillUpdate’);<br>    }<br>    render() {<br>        console.log(‘4.render’);<br>        return (<br>            <view><br>                <text>Hello world!</text><br>            </view><br>        )<br>    }<br>    componentDidUpdate(prevProps, prevState){<br>        console.log(‘5.componentDidUpdate’);<br>    }<br>    componentDidMount(){<br>        console.log(‘6.componentDidMount’);<br>    }<br>    componentWillUnmount(){<br>        console.log(‘7.componentWillUnmount’);<br>    }<br>}</p>
+<p>全局调用次数</p>
+<p>getDefaultProps 1<br>getInitialState 1<br>componentWillMount 1<br>render &gt;=1<br>componentDidMount 1<br>componentWillReceiveProps &gt;=0<br>shouldComponentUpdate &gt;=0<br>componentWillUpdate &gt;=0<br>componentDidUpdate &gt;=0<br>componentWillUnmount 1 </p>
+<h3 id="2问：shouldComponentUpdate"><a href="#2问：shouldComponentUpdate" class="headerlink" title="2问：shouldComponentUpdate"></a>2问：shouldComponentUpdate</h3><p>如何避免这些不必要的render；<br>通过从 shouldComponentUpdate 返回 false，<br>React 将假定当前组件及其所有子组件将保持与当前组件相同。</p>
+<h3 id="3问：setState的时候，发生了什么事？"><a href="#3问：setState的时候，发生了什么事？" class="headerlink" title="3问：setState的时候，发生了什么事？"></a>3问：setState的时候，发生了什么事？</h3><p>当调用 setState 时，React会做的第一件事情是将传递给<br>setState 的对象合并到组件的当前状态。<br>这将启动一个称为和解（reconciliation）的过程。<br>和解（reconciliation）的最终目标是以最有效的方式，根据这个新的状态来更新UI。<br>为此，React将构建一个新的 React 元素树（您可以将其视为 UI 的对象表示）。<br>一旦有了这个树，为了弄清 UI 如何响应新的状态而改变，<br>React 会将这个新树与上一个元素树相比较（ diff ）。<br>通过这样做， React 将会知道发生的确切变化，<br>并且通过了解发生什么变化，只需在绝对必要的情况下进行更新即可最小化 UI 的占用空间。</p>
+<h3 id="4问：this-props-state"><a href="#4问：this-props-state" class="headerlink" title="4问：this.props  state"></a>4问：this.props  state</h3><p>state的初始值来自于自身的getInitalState（constructor）函数；<br>props来自于父组件或者自身getDefaultProps（若key相同前者可覆盖后者）。</p>
+<p>state只能在自身组件中setState，不能由父组件修改；<br>props只能由父组件修改，不能在自身组件修改。</p>
+<p>state代表的是一个组件内部自身的状态，只能在自身组件中存在。<br>props是一个父组件传递给子组件的数据流，这个数据流可以一直传递到子孙组件；</p>
+<h3 id="5问：refs"><a href="#5问：refs" class="headerlink" title="5问：refs"></a>5问：refs</h3><p>ref : 指向某个子组件<br>父组件调用子组件的方法用。</p>
+<h3 id="6问：React-Native相对于原生的ios和Android有哪些优势？"><a href="#6问：React-Native相对于原生的ios和Android有哪些优势？" class="headerlink" title="6问：React Native相对于原生的ios和Android有哪些优势？"></a>6问：React Native相对于原生的ios和Android有哪些优势？</h3><p>优点：</p>
+<p>1.性能媲美原生APP。<br>2.使用JavaScript编码，只要学习这一种语言。<br>3.绝大部分代码安卓和IOS都能共用。<br>4.组件式开发，代码重用性很高。<br>5.跟编写网页一般，修改代码后即可自动刷新，不需要慢慢编译，节省很多编译等待时间。<br>6.支持APP热更新，更新无需重新安装APP。</p>
+<p>缺点：</p>
+<p>内存占用相对较高；版本还不稳定。基本一月一更新。</p>
+<h3 id="7问：props-children-map函数来遍历会收到异常提示，为什么？应该如何遍历？"><a href="#7问：props-children-map函数来遍历会收到异常提示，为什么？应该如何遍历？" class="headerlink" title="7问：props.children.map函数来遍历会收到异常提示，为什么？应该如何遍历？"></a>7问：props.children.map函数来遍历会收到异常提示，为什么？应该如何遍历？</h3><p>this.props.children 的值有三种可能：<br>    1.当前组件没有子节点，它就是 undefined;<br>    2.有一个子节点，数据类型是 object ；<br>    3.有多个子节点，数据类型就是 array 。<br>系统提供React.Children.map()方法安全的遍历子节点对象。</p>
+<h3 id="8问："><a href="#8问：" class="headerlink" title="8问："></a>8问：</h3><p>constructor() {<br>    super();<br>    this.state = {<br>      val: 0<br>    };<br>  }</p>
+<p>  componentDidMount() {<br>    this.setState({val: this.state.val + 1});<br>    console.log(this.state.val);    // 第 1 次 log</p>
+<pre><code>this.setState({val: this.state.val + 1});
+console.log(this.state.val);    // 第 2 次 log
+
+setTimeout(() =&gt; {
+  this.setState({val: this.state.val + 1});
+  console.log(this.state.val);  // 第 3 次 log
+
+  this.setState({val: this.state.val + 1});
+  console.log(this.state.val);  // 第 4 次 log
+}, 0);</code></pre><p>  }</p>
+<p>  render() {<br>    return null;<br>  }<br>};</p>
+<p>问上述代码中 4 次 console.log 打印出来的 val 分别是多少？</p>
+<p>答案：4 次 log 的值分别是：0、0、2、3。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.7seven.cn/2019/09/20/面试锦集/" data-id="ck0rr89du00053sqvg3ic1b6l" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native-面试题/">React Native 面试题</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-React-Native-国际化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/20/React-Native-国际化/" class="article-date">
@@ -103,7 +179,7 @@
 <p>en.js</p>
 <p>export default {<br>    english: ‘english’,<br>    chinese: ‘chinese’,<br>    changeToEnglish: ‘change to english’,<br>    changeToChinese: ‘change to chinese’,<br>    changeToSystem: ‘change to System’,<br>}</p>
 <p>I18n.js</p>
-<p>import I18n,{ getLanguages } from ‘react-native-i18n’<br>import DeviceInfo from ‘react-native-device-info’<br>import DataRepository from ‘../dao/DataRepository’<br>import en from ‘./en’<br>import zh from ‘./zh’</p>
+<p>import I18n,{ getLanguages } from ‘react-native-i18n’<br>import DeviceInfo from ‘react-native-device-info’<br>import en from ‘./en’<br>import zh from ‘./zh’</p>
 <p>I18n.defaultLocale = ‘en’;</p>
 <p>I18n.fallbacks = true;</p>
 <p>I18n.translations = {<br>    en,<br>    zh,<br>};</p>
@@ -116,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-国际化/" data-id="ck0rorcdx0004awqv5o64i9e2" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-国际化/" data-id="ck0rr89ds00043sqv6flis38e" class="article-share-link">Share</a>
       
       
       
@@ -173,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0rorcdr0001awqvzb07n7gk" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0rr89dm00013sqv4ah6zc1a" class="article-share-link">Share</a>
       
       
       
@@ -222,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0rorcdk0000awqvy7h11gk4" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0rr89dg00003sqvwmolu3fz" class="article-share-link">Share</a>
       
       
       
@@ -264,7 +340,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title categories">Categories</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题集合/">面试题集合</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -274,7 +350,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/React-Native-0-60/" style="font-size: 14px;">React Native 0.60</a> <a href="/tags/React-Native-i18n/" style="font-size: 14px;">React Native i18n</a>
+      <a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/React-Native-0-60/" style="font-size: 14px;">React Native 0.60</a> <a href="/tags/React-Native-i18n/" style="font-size: 14px;">React Native i18n</a> <a href="/tags/React-Native-面试题/" style="font-size: 14px;">React Native 面试题</a>
     </div>
   </div>
 
@@ -284,6 +360,10 @@
     <h3 class="widget-title recent-posts">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/09/20/面试锦集/">面试锦集</a>
+          </li>
         
           <li>
             <a href="/2019/09/20/React-Native-国际化/">React Native 国际化</a>
@@ -306,7 +386,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>面试锦集 | BOBOCODING</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="React Native1问：React Native 的生命周期代码实现： import React, {Component} from ‘react’import {Text, View} from ‘react-native’export default class Index extends Component {    constructor(props) {        super(">
+<meta name="keywords" content="React Native 面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试锦集">
+<meta property="og:url" content="http://www.7seven.cn/2019/09/20/面试锦集/index.html">
+<meta property="og:site_name" content="BOBOCODING">
+<meta property="og:description" content="React Native1问：React Native 的生命周期代码实现： import React, {Component} from ‘react’import {Text, View} from ‘react-native’export default class Index extends Component {    constructor(props) {        super(">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-20T06:39:52.356Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试锦集">
+<meta name="twitter:description" content="React Native1问：React Native 的生命周期代码实现： import React, {Component} from ‘react’import {Text, View} from ‘react-native’export default class Index extends Component {    constructor(props) {        super(">
+  
+    <link rel="alternate" href="/atom.xml" title="BOBOCODING" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.7seven.cn"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BOBOCODING</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面试锦集" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/20/面试锦集/" class="article-date">
+  <time datetime="2019-09-20T06:12:08.000Z" itemprop="datePublished">2019-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/面试题集合/">面试题集合</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面试锦集
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><h3 id="1问：React-Native-的生命周期"><a href="#1问：React-Native-的生命周期" class="headerlink" title="1问：React Native 的生命周期"></a>1问：React Native 的生命周期</h3><p>代码实现：</p>
+<p>import React, {Component} from ‘react’<br>import {Text, View} from ‘react-native’<br>export default class Index extends Component {<br>    constructor(props) {<br>        super(props);<br>        console.log(‘1.constructor’);<br>    }<br>    componentWillMount(){<br>        console.log(‘2.componentWillMount’);<br>    }<br>    componentWillUpdate(){<br>        console.log(‘3.componentWillUpdate’);<br>    }<br>    render() {<br>        console.log(‘4.render’);<br>        return (<br>            <view><br>                <text>Hello world!</text><br>            </view><br>        )<br>    }<br>    componentDidUpdate(prevProps, prevState){<br>        console.log(‘5.componentDidUpdate’);<br>    }<br>    componentDidMount(){<br>        console.log(‘6.componentDidMount’);<br>    }<br>    componentWillUnmount(){<br>        console.log(‘7.componentWillUnmount’);<br>    }<br>}</p>
+<p>全局调用次数</p>
+<p>getDefaultProps 1<br>getInitialState 1<br>componentWillMount 1<br>render &gt;=1<br>componentDidMount 1<br>componentWillReceiveProps &gt;=0<br>shouldComponentUpdate &gt;=0<br>componentWillUpdate &gt;=0<br>componentDidUpdate &gt;=0<br>componentWillUnmount 1 </p>
+<h3 id="2问：shouldComponentUpdate"><a href="#2问：shouldComponentUpdate" class="headerlink" title="2问：shouldComponentUpdate"></a>2问：shouldComponentUpdate</h3><p>如何避免这些不必要的render；<br>通过从 shouldComponentUpdate 返回 false，<br>React 将假定当前组件及其所有子组件将保持与当前组件相同。</p>
+<h3 id="3问：setState的时候，发生了什么事？"><a href="#3问：setState的时候，发生了什么事？" class="headerlink" title="3问：setState的时候，发生了什么事？"></a>3问：setState的时候，发生了什么事？</h3><p>当调用 setState 时，React会做的第一件事情是将传递给<br>setState 的对象合并到组件的当前状态。<br>这将启动一个称为和解（reconciliation）的过程。<br>和解（reconciliation）的最终目标是以最有效的方式，根据这个新的状态来更新UI。<br>为此，React将构建一个新的 React 元素树（您可以将其视为 UI 的对象表示）。<br>一旦有了这个树，为了弄清 UI 如何响应新的状态而改变，<br>React 会将这个新树与上一个元素树相比较（ diff ）。<br>通过这样做， React 将会知道发生的确切变化，<br>并且通过了解发生什么变化，只需在绝对必要的情况下进行更新即可最小化 UI 的占用空间。</p>
+<h3 id="4问：this-props-state"><a href="#4问：this-props-state" class="headerlink" title="4问：this.props  state"></a>4问：this.props  state</h3><p>state的初始值来自于自身的getInitalState（constructor）函数；<br>props来自于父组件或者自身getDefaultProps（若key相同前者可覆盖后者）。</p>
+<p>state只能在自身组件中setState，不能由父组件修改；<br>props只能由父组件修改，不能在自身组件修改。</p>
+<p>state代表的是一个组件内部自身的状态，只能在自身组件中存在。<br>props是一个父组件传递给子组件的数据流，这个数据流可以一直传递到子孙组件；</p>
+<h3 id="5问：refs"><a href="#5问：refs" class="headerlink" title="5问：refs"></a>5问：refs</h3><p>ref : 指向某个子组件<br>父组件调用子组件的方法用。</p>
+<h3 id="6问：React-Native相对于原生的ios和Android有哪些优势？"><a href="#6问：React-Native相对于原生的ios和Android有哪些优势？" class="headerlink" title="6问：React Native相对于原生的ios和Android有哪些优势？"></a>6问：React Native相对于原生的ios和Android有哪些优势？</h3><p>优点：</p>
+<p>1.性能媲美原生APP。<br>2.使用JavaScript编码，只要学习这一种语言。<br>3.绝大部分代码安卓和IOS都能共用。<br>4.组件式开发，代码重用性很高。<br>5.跟编写网页一般，修改代码后即可自动刷新，不需要慢慢编译，节省很多编译等待时间。<br>6.支持APP热更新，更新无需重新安装APP。</p>
+<p>缺点：</p>
+<p>内存占用相对较高；版本还不稳定。基本一月一更新。</p>
+<h3 id="7问：props-children-map函数来遍历会收到异常提示，为什么？应该如何遍历？"><a href="#7问：props-children-map函数来遍历会收到异常提示，为什么？应该如何遍历？" class="headerlink" title="7问：props.children.map函数来遍历会收到异常提示，为什么？应该如何遍历？"></a>7问：props.children.map函数来遍历会收到异常提示，为什么？应该如何遍历？</h3><p>this.props.children 的值有三种可能：<br>    1.当前组件没有子节点，它就是 undefined;<br>    2.有一个子节点，数据类型是 object ；<br>    3.有多个子节点，数据类型就是 array 。<br>系统提供React.Children.map()方法安全的遍历子节点对象。</p>
+<h3 id="8问："><a href="#8问：" class="headerlink" title="8问："></a>8问：</h3><p>constructor() {<br>    super();<br>    this.state = {<br>      val: 0<br>    };<br>  }</p>
+<p>  componentDidMount() {<br>    this.setState({val: this.state.val + 1});<br>    console.log(this.state.val);    // 第 1 次 log</p>
+<pre><code>this.setState({val: this.state.val + 1});
+console.log(this.state.val);    // 第 2 次 log
+
+setTimeout(() =&gt; {
+  this.setState({val: this.state.val + 1});
+  console.log(this.state.val);  // 第 3 次 log
+
+  this.setState({val: this.state.val + 1});
+  console.log(this.state.val);  // 第 4 次 log
+}, 0);</code></pre><p>  }</p>
+<p>  render() {<br>    return null;<br>  }<br>};</p>
+<p>问上述代码中 4 次 console.log 打印出来的 val 分别是多少？</p>
+<p>答案：4 次 log 的值分别是：0、0、2、3。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.7seven.cn/2019/09/20/面试锦集/" data-id="ck0rr89du00053sqvg3ic1b6l" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native-面试题/">React Native 面试题</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>Recommended Posts</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =8
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/20/React-Native-国际化/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">React Native 国际化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">Content</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native"><span class="toc-number">1.</span> <span class="toc-text">React Native</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1问：React-Native-的生命周期"><span class="toc-number">1.1.</span> <span class="toc-text">1问：React Native 的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2问：shouldComponentUpdate"><span class="toc-number">1.2.</span> <span class="toc-text">2问：shouldComponentUpdate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3问：setState的时候，发生了什么事？"><span class="toc-number">1.3.</span> <span class="toc-text">3问：setState的时候，发生了什么事？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4问：this-props-state"><span class="toc-number">1.4.</span> <span class="toc-text">4问：this.props  state</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5问：refs"><span class="toc-number">1.5.</span> <span class="toc-text">5问：refs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6问：React-Native相对于原生的ios和Android有哪些优势？"><span class="toc-number">1.6.</span> <span class="toc-text">6问：React Native相对于原生的ios和Android有哪些优势？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7问：props-children-map函数来遍历会收到异常提示，为什么？应该如何遍历？"><span class="toc-number">1.7.</span> <span class="toc-text">7问：props.children.map函数来遍历会收到异常提示，为什么？应该如何遍历？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8问："><span class="toc-number">1.8.</span> <span class="toc-text">8问：</span></a></li></ol></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 John Doe&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      Contact&nbsp;|&nbsp;958267873@qq.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
