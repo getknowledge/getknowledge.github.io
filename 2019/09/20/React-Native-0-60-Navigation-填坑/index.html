@@ -3,16 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>BOBOCODING</title>
+  <title>React Native 0.60 Navigation 填坑 | BOBOCODING</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="IT Life Family Money Play">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BOBOCODING">
-<meta property="og:url" content="http://www.7seven.cn/index.html">
+  <meta name="description" content="##升级 RN0.60 Navigation 报错问题修改 ###实例代码 修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigato">
+<meta name="keywords" content="React Native">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native 0.60 Navigation 填坑">
+<meta property="og:url" content="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/index.html">
 <meta property="og:site_name" content="BOBOCODING">
+<meta property="og:description" content="##升级 RN0.60 Navigation 报错问题修改 ###实例代码 修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigato">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-20T02:08:12.777Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BOBOCODING">
+<meta name="twitter:title" content="React Native 0.60 Navigation 填坑">
+<meta name="twitter:description" content="##升级 RN0.60 Navigation 报错问题修改 ###实例代码 修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigato">
   
     <link rel="alternate" href="/atom.xml" title="BOBOCODING" type="application/atom+xml">
   
@@ -65,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-React-Native-0-60-Navigation-填坑" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-React-Native-0-60-Navigation-填坑" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/20/React-Native-0-60-Navigation-填坑/" class="article-date">
   <time datetime="2019-09-20T01:59:42.000Z" itemprop="datePublished">2019-09-20</time>
@@ -84,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/20/React-Native-0-60-Navigation-填坑/">React Native 0.60 Navigation 填坑</a>
+    <h1 class="article-title" itemprop="name">
+      React Native 0.60 Navigation 填坑
     </h1>
   
 
@@ -121,59 +123,72 @@
     </footer>
   </div>
   
-</article>
- 
-
-
-  
-    <article id="post-Android-EditText-第二次点击被键盘遮挡！" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" class="article-date">
-  <time datetime="2019-09-20T01:22:56.000Z" itemprop="datePublished">2019-09-20</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/">Android EditText 第二次点击被键盘遮挡！</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <h2 id="问题：EditText-第二次点击时，弹出来的软键盘会把EditText遮盖掉。"><a href="#问题：EditText-第二次点击时，弹出来的软键盘会把EditText遮盖掉。" class="headerlink" title="问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。"></a>问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。</h2><p>描述：设置了一个EditText，位置靠近屏幕底部。<br>第一次点击EditText,会跟随软键盘上升，<br>手动隐藏软键盘，<br>再次点击EditText，软键盘弹出后就遮挡了EditText。</p>
-<p>尝试了好多方法<br>在清单文件中对应的activity<br>设置android:windowSoftInputMode=”adjustPan”，<br>设置android:windowSoftInputMode=”stateVisible|adjustResize”，<br>达不到效果.<br>或者把顶级的layout替换成ScrollView，<br>或者说在顶级的Layout上面再加一层ScrollView。<br>都没达到想要的效果。</p>
-<p>解决方法：<br>Android 5.0中<br>android:gravity=”center”和android:inputType=”phone”<br>或者android:singleLine=”true”一起使用时会出现软键盘遮挡问题。<br>在Android 5.0后<br>EditText默认会显示一行，不用设置这个属性：android:singleLine=”true”。<br>android:inputType=”phone”属性改为android:phoneNumber=”true”，解决问题。</p>
-
-      
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>Recommended Posts</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =8
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0rhiz2p0000l8qvm8zoqb5k" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
   </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Android EditText 第二次点击被键盘遮挡！</div>
+    </a>
+  
+</nav>
+
   
 </article>
  
-
-
+     
+  <div class="comments" id="comments">
+    
+     
+       
+       
+      
+      
+  </div>
+ 
   
 
 </section>
@@ -181,42 +196,14 @@
     <aside id="sidebar">
   
     
-  <div class="widget-wrap">
-     
-    <div class="widget follow">
-      
-              <a class="github" aria-hidden="true" href="http://getknowledge.github.io" target="_blank" title="Github"></a>
-      
-      
-      
-      
-            <a class="email" aria-hidden="true"  href="mailto:958267873@qq.com" target="_blank" title="邮箱"></a>
-      
-    </div>
-  </div>
-
 
   
     
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title categories">Categories</h3>
-    <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title tagcloud">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/React-Native/" style="font-size: 14px;">React Native</a>
-    </div>
-  </div>
-
   
     
   <div class="widget-wrap">
@@ -238,33 +225,9 @@
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title archive">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
 
   
     
-<div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
-    <div class="widget">
-        <ul>
-            
-            <li>
-                <a href="http://blog.giscafer.com">giscafer&#39;s blog</a>
-            </li>
-            
-            <li>
-                <a href="http://www.gis520.com">GIS520社区</a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
   
     <!--微信公众号二维码-->
 
