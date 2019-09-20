@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Android 笔试题题题1 | BOBOCODING</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android1问：Android的四种启动模式？1，standard 2，singleTop 3，singleTask 4，singleInstance 2问：Android的生命周期？生命周期调用 1）启动Activity onCreate() —&amp;gt; onStart() —&amp;gt; onResume() 2）按Home键回到桌面 / 锁屏 onPause() —&amp;gt; onStop()">
+<meta name="keywords" content="Android 面试笔试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 笔试题题题1">
+<meta property="og:url" content="http://www.7seven.cn/2019/09/20/Android-笔试题题题1/index.html">
+<meta property="og:site_name" content="BOBOCODING">
+<meta property="og:description" content="Android1问：Android的四种启动模式？1，standard 2，singleTop 3，singleTask 4，singleInstance 2问：Android的生命周期？生命周期调用 1）启动Activity onCreate() —&amp;gt; onStart() —&amp;gt; onResume() 2）按Home键回到桌面 / 锁屏 onPause() —&amp;gt; onStop()">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-20T08:00:52.272Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 笔试题题题1">
+<meta name="twitter:description" content="Android1问：Android的四种启动模式？1，standard 2，singleTop 3，singleTask 4，singleInstance 2问：Android的生命周期？生命周期调用 1）启动Activity onCreate() —&amp;gt; onStart() —&amp;gt; onResume() 2）按Home键回到桌面 / 锁屏 onPause() —&amp;gt; onStop()">
+  
+    <link rel="alternate" href="/atom.xml" title="BOBOCODING" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.7seven.cn"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BOBOCODING</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Android-笔试题题题1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/20/Android-笔试题题题1/" class="article-date">
+  <time datetime="2019-09-20T07:37:52.000Z" itemprop="datePublished">2019-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/面试题集合/">面试题集合</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 笔试题题题1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><h3 id="1问：Android的四种启动模式？"><a href="#1问：Android的四种启动模式？" class="headerlink" title="1问：Android的四种启动模式？"></a>1问：Android的四种启动模式？</h3><p>1，standard</p>
+<p>2，singleTop</p>
+<p>3，singleTask</p>
+<p>4，singleInstance</p>
+<h3 id="2问：Android的生命周期？"><a href="#2问：Android的生命周期？" class="headerlink" title="2问：Android的生命周期？"></a>2问：Android的生命周期？</h3><p>生命周期调用</p>
+<p>1）启动Activity</p>
+<p>onCreate() —&gt; onStart() —&gt; onResume()</p>
+<p>2）按Home键回到桌面 / 锁屏</p>
+<p>onPause() —&gt; onStop()</p>
+<p>3）从桌面回到Activity / 解锁<br>onRestart() —&gt; onStart() —&gt; onResume()</p>
+<p>4）跳转新Activity</p>
+<p>A：onPause() —&gt; onStop()</p>
+<p>B：onCreate() —&gt; onStart() —&gt; onResume()</p>
+<p>A —&gt; B：onPause()_A —&gt; onCreate()_B —&gt; onStart()_B —&gt; onResume()_B —&gt; onStop()_A</p>
+<p>5）返回上一个Activity</p>
+<p>B：onPause() —&gt; onStop() —&gt; onDestroy()</p>
+<p>A：onRestart() —&gt; onStart() —&gt; onResume()</p>
+<p>B —&gt; A：onPause()_B —&gt; onRestart()_A —&gt; onStart()_A —&gt; onResume()_A —&gt; onStop()_B —&gt; onDestroy()_B</p>
+<p>6）退出Activity</p>
+<p>onPause() —&gt; onStop() —&gt; onDestroy()</p>
+<h3 id="3问：Android的四大组件？"><a href="#3问：Android的四大组件？" class="headerlink" title="3问：Android的四大组件？"></a>3问：Android的四大组件？</h3><p>活动（activity），用于表现功能；</p>
+<p>服务（service），后台运行服务，不提供界面呈现；</p>
+<p>广播接受者（Broadcast Receive），勇于接收广播；</p>
+<p>内容提供者（Content Provider），支持多个应用中存储和读取数据，相当于数据库。</p>
+<h3 id="4问：service的启动方式？"><a href="#4问：service的启动方式？" class="headerlink" title="4问：service的启动方式？"></a>4问：service的启动方式？</h3><p>1、startService 启动的服务：主要用于启动一个服务执行后台任务，不进行通信。停止服务使用stopService；</p>
+<p>2、bindService 启动的服务：该方法启动的服务可以进行通信。停止服务使用unbindService；</p>
+<p>startService 同时也 bindService 启动的服务：停止服务应同时使用stepService与unbindService</p>
+<h3 id="5问：手写冒泡排序算法？"><a href="#5问：手写冒泡排序算法？" class="headerlink" title="5问：手写冒泡排序算法？"></a>5问：手写冒泡排序算法？</h3><p>public static void main(String[] args) {</p>
+<pre><code>int x[]={7,345,456,2,36,36,798,3}; //定义一个要排序的数组
+
+   int test=0; //定义一个虚拟的数字
+
+   for (int i = 0; i &lt; x.length-1; i++) {//每次都要比较完一个数直至到右边，所以-1
+       for (int j = 0; j &lt; x.length-1-i; j++) {//每次都要比较完一轮数据，所以-i
+           if (x[j]&gt;x[j+1]) { //如果在比较的时候这个数比后一个的数更大
+               test=x[j]; //定义的虚拟数给它赋值为x[j]
+               x[j]=x[j+1]; //给x数组的x[j]这个位置赋值为后一个更小的数
+               x[j+1]=test; //    给x数组的x[j+1]这个位置赋值为前一个更大的数
+          }                    
+      }        
+  }
+   for (int i = 0; i &lt; x.length; i++) {
+       System.out.print(x[i]+&quot;,&quot;);    //打印出x[i]数组
+  }</code></pre><p>}</p>
+<p>打印结果为：2,3,7,36,36,345,456,798,</p>
+<h3 id="6问：手写自定义view倒计时？"><a href="#6问：手写自定义view倒计时？" class="headerlink" title="6问：手写自定义view倒计时？"></a>6问：手写自定义view倒计时？</h3><p>View绘制的三个流程</p>
+<p>在自定义View的时候一般需要重写父类的onMeasure()、onLayout()、onDraw()三个方法，来完成视图的展示过程。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.7seven.cn/2019/09/20/Android-笔试题题题1/" data-id="ck0ru4lxb0004ukqvmr57ry7s" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-面试笔试题/">Android 面试笔试题</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>Recommended Posts</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =8
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/20/面试锦集/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">面试锦集</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">Content</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android"><span class="toc-number">1.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1问：Android的四种启动模式？"><span class="toc-number">1.1.</span> <span class="toc-text">1问：Android的四种启动模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2问：Android的生命周期？"><span class="toc-number">1.2.</span> <span class="toc-text">2问：Android的生命周期？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3问：Android的四大组件？"><span class="toc-number">1.3.</span> <span class="toc-text">3问：Android的四大组件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4问：service的启动方式？"><span class="toc-number">1.4.</span> <span class="toc-text">4问：service的启动方式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5问：手写冒泡排序算法？"><span class="toc-number">1.5.</span> <span class="toc-text">5问：手写冒泡排序算法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6问：手写自定义view倒计时？"><span class="toc-number">1.6.</span> <span class="toc-text">6问：手写自定义view倒计时？</span></a></li></ol></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 John Doe&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      Contact&nbsp;|&nbsp;958267873@qq.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
