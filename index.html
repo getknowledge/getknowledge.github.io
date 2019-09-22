@@ -67,6 +67,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-React-Redux-简单使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/22/React-Redux-简单使用/" class="article-date">
+  <time datetime="2019-09-22T07:31:30.000Z" itemprop="datePublished">2019-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-Native/">React Native</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/22/React-Redux-简单使用/">React Redux 简单使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h2 id="安装几个库"><a href="#安装几个库" class="headerlink" title="安装几个库"></a>安装几个库</h2><p>npm install –save prop-types<br>npm install –save react-redux<br>npm install –save redux</p>
+<h2 id="添加相应js文件"><a href="#添加相应js文件" class="headerlink" title="添加相应js文件"></a>添加相应js文件</h2><ol>
+<li>Action.js</li>
+</ol>
+<p>export const ADD_REIMBURSE =’ADD_REIMBURSE’;//添加<br>export const DEL_REIMBURSE =’DEL_REIMBURSE’;//删除</p>
+<p>export function AddBeimburse(data) {<br>    return{<br>        type:ADD_REIMBURSE,<br>        payload:{data}<br>    }<br>}</p>
+<p>export function DelBeimburse(id) {<br>    return{<br>        type:DEL_REIMBURSE,<br>        payload:{id}<br>    }<br>}</p>
+<ol start="2">
+<li>Reducer.js</li>
+</ol>
+<p>import {ADD_REIMBURSE,DEL_REIMBURSE} from ../Action.js;</p>
+<p>const initialState={<br>  addbaoxiao:[],<br>}</p>
+<p>export default function (state=initialState,action) {</p>
+<pre><code>switch(action.type){
+    case ADD_REIMBURSE:{
+        var newData = state.addbaoxiao.concat(action.payload.data)
+        return{
+            ...state,
+            addbaoxiao:newData
+        }
+    }
+    case DEL_REIMBURSE:{
+        var newData = state.addbaoxiao;
+        newData.splice(action.payload.id,1);
+        return{
+            ...state,
+            addbaoxiao:newData
+        }
+    }
+default:
+        return state;
+}</code></pre><p>}</p>
+<ol start="3">
+<li>Store.js</li>
+</ol>
+<p>import { createStore,applyMiddleware } from “redux”;<br>import thunk from ‘redux-thunk’;<br>import rootReducer from ‘./reducers’;</p>
+<p>let store = createStore(rootReducer,applyMiddleware(thunk));</p>
+<p>export default store;</p>
+<h2 id="使用。"><a href="#使用。" class="headerlink" title="使用。"></a>使用。</h2><p>AddModel.js</p>
+<p>import React from “react”;<br>mport {<br>    View,<br>    Text,<br>    TextInput,<br>} from “react-native”;</p>
+<p>class AddModel extends BaseComponent {<br>    constructor(props) {<br>        super(props);<br>        this.state= {<br>            newData: {},<br>        }<br>    }</p>
+<pre><code>this.props.AddData(this.state.newData);
+
+this.props.DelData(index);</code></pre><p>}</p>
+<p>const mapStateToProps = (state) =&gt; state.remburse;<br>const mapDispatchToProps = (dispatch, ownProps) =&gt; {<br>    return {<br>        AddData: (…args) =&gt; dispatch(actions.AddBeimburse(…args)),<br>        DelData: (…args) =&gt; dispatch(actions.DelBeimburse(…args)),<br>    }<br>};<br>export default connect(mapStateToProps, mapDispatchToProps)(AddModel)</p>
+<p>The End.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.7seven.cn/2019/09/22/React-Redux-简单使用/" data-id="ck0uoj95i000fd4qvaquwzydq" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Redux/">React Redux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-ES6-语法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/22/ES6-语法/" class="article-date">
@@ -123,7 +215,7 @@ ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/22/ES6-语法/" data-id="ck0ud2ni9000484qvw7p2h7zi" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/22/ES6-语法/" data-id="ck0uoj9560005d4qvn5ehfjke" class="article-share-link">Share</a>
       
       
       
@@ -206,7 +298,7 @@ ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/22/React-Native-Flex-布局/" data-id="ck0ud2nic000684qvf0vjgt50" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/22/React-Native-Flex-布局/" data-id="ck0uoj9570006d4qvdkakkfm2" class="article-share-link">Share</a>
       
       
       
@@ -299,7 +391,7 @@ ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/Android-笔试题题题1/" data-id="ck0ud2ni2000184qv3a319q9q" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/Android-笔试题题题1/" data-id="ck0uoj94y0001d4qvccxetwkp" class="article-share-link">Share</a>
       
       
       
@@ -375,7 +467,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/面试锦集/" data-id="ck0ud2nih000b84qvylevngf4" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/面试锦集/" data-id="ck0uoj95e000bd4qvbavsr4vs" class="article-share-link">Share</a>
       
       
       
@@ -438,7 +530,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-国际化/" data-id="ck0ud2nif000a84qvy7w2shby" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-国际化/" data-id="ck0uoj95b000ad4qv5q4g5d0m" class="article-share-link">Share</a>
       
       
       
@@ -495,7 +587,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0ud2nia000584qvlwy92irc" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0uoj9540004d4qv4fsm01tj" class="article-share-link">Share</a>
       
       
       
@@ -544,7 +636,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0ud2nhu000084qvibau2wev" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0uoj94p0000d4qvq34eprr6" class="article-share-link">Share</a>
       
       
       
@@ -586,7 +678,7 @@ setTimeout(() =&gt; {
   <div class="widget-wrap">
     <h3 class="widget-title categories">Categories</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题集合/">面试题集合</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题集合/">面试题集合</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -596,7 +688,7 @@ setTimeout(() =&gt; {
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/Android-面试笔试题/" style="font-size: 14px;">Android 面试笔试题</a> <a href="/tags/JS-Java-Script/" style="font-size: 14px;">JS Java Script</a> <a href="/tags/React-Native-0-60/" style="font-size: 14px;">React Native 0.60</a> <a href="/tags/React-Native-Flex/" style="font-size: 14px;">React Native Flex</a> <a href="/tags/React-Native-i18n/" style="font-size: 14px;">React Native i18n</a> <a href="/tags/React-Native-面试题/" style="font-size: 14px;">React Native 面试题</a>
+      <a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/Android-面试笔试题/" style="font-size: 14px;">Android 面试笔试题</a> <a href="/tags/JS-Java-Script/" style="font-size: 14px;">JS Java Script</a> <a href="/tags/React-Native-0-60/" style="font-size: 14px;">React Native 0.60</a> <a href="/tags/React-Native-Flex/" style="font-size: 14px;">React Native Flex</a> <a href="/tags/React-Native-i18n/" style="font-size: 14px;">React Native i18n</a> <a href="/tags/React-Native-面试题/" style="font-size: 14px;">React Native 面试题</a> <a href="/tags/React-Redux/" style="font-size: 14px;">React Redux</a>
     </div>
   </div>
 
@@ -606,6 +698,10 @@ setTimeout(() =&gt; {
     <h3 class="widget-title recent-posts">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/09/22/React-Redux-简单使用/">React Redux 简单使用</a>
+          </li>
         
           <li>
             <a href="/2019/09/22/ES6-语法/">ES6 语法</a>
@@ -623,10 +719,6 @@ setTimeout(() =&gt; {
             <a href="/2019/09/20/面试锦集/">面试锦集</a>
           </li>
         
-          <li>
-            <a href="/2019/09/20/React-Native-国际化/">React Native 国际化</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -636,7 +728,7 @@ setTimeout(() =&gt; {
   <div class="widget-wrap">
     <h3 class="widget-title archive">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 

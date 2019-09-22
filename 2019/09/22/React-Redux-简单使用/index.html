@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Android EditText 第二次点击被键盘遮挡！ | BOBOCODING</title>
+  <title>React Redux 简单使用 | BOBOCODING</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。描述：设置了一个EditText，位置靠近屏幕底部。第一次点击EditText,会跟随软键盘上升，手动隐藏软键盘，再次点击EditText，软键盘弹出后就遮挡了EditText。 尝试了好多方法在清单文件中对应的activity设置android:windowSoftInputMode=”adjustPan”，设置an">
-<meta name="keywords" content="Android">
+  <meta name="description" content="安装几个库npm install –save prop-typesnpm install –save react-reduxnpm install –save redux 添加相应js文件 Action.js  export const ADD_REIMBURSE =’ADD_REIMBURSE’;//添加export const DEL_REIMBURSE =’DEL_REIMBURSE’;//">
+<meta name="keywords" content="React Redux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android EditText 第二次点击被键盘遮挡！">
-<meta property="og:url" content="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/index.html">
+<meta property="og:title" content="React Redux 简单使用">
+<meta property="og:url" content="http://www.7seven.cn/2019/09/22/React-Redux-简单使用/index.html">
 <meta property="og:site_name" content="BOBOCODING">
-<meta property="og:description" content="问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。描述：设置了一个EditText，位置靠近屏幕底部。第一次点击EditText,会跟随软键盘上升，手动隐藏软键盘，再次点击EditText，软键盘弹出后就遮挡了EditText。 尝试了好多方法在清单文件中对应的activity设置android:windowSoftInputMode=”adjustPan”，设置an">
+<meta property="og:description" content="安装几个库npm install –save prop-typesnpm install –save react-reduxnpm install –save redux 添加相应js文件 Action.js  export const ADD_REIMBURSE =’ADD_REIMBURSE’;//添加export const DEL_REIMBURSE =’DEL_REIMBURSE’;//">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-20T01:54:47.993Z">
+<meta property="og:updated_time" content="2019-09-22T07:47:37.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android EditText 第二次点击被键盘遮挡！">
-<meta name="twitter:description" content="问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。描述：设置了一个EditText，位置靠近屏幕底部。第一次点击EditText,会跟随软键盘上升，手动隐藏软键盘，再次点击EditText，软键盘弹出后就遮挡了EditText。 尝试了好多方法在清单文件中对应的activity设置android:windowSoftInputMode=”adjustPan”，设置an">
+<meta name="twitter:title" content="React Redux 简单使用">
+<meta name="twitter:description" content="安装几个库npm install –save prop-typesnpm install –save react-reduxnpm install –save redux 添加相应js文件 Action.js  export const ADD_REIMBURSE =’ADD_REIMBURSE’;//添加export const DEL_REIMBURSE =’DEL_REIMBURSE’;//">
   
     <link rel="alternate" href="/atom.xml" title="BOBOCODING" type="application/atom+xml">
   
@@ -69,14 +69,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Android-EditText-第二次点击被键盘遮挡！" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-React-Redux-简单使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" class="article-date">
-  <time datetime="2019-09-20T01:22:56.000Z" itemprop="datePublished">2019-09-20</time>
+    <a href="/2019/09/22/React-Redux-简单使用/" class="article-date">
+  <time datetime="2019-09-22T07:31:30.000Z" itemprop="datePublished">2019-09-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/React-Native/">React Native</a>
   </div>
 
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android EditText 第二次点击被键盘遮挡！
+      React Redux 简单使用
     </h1>
   
 
@@ -97,18 +97,61 @@
       
         <!-- Table of Contents -->
         
-        <h2 id="问题：EditText-第二次点击时，弹出来的软键盘会把EditText遮盖掉。"><a href="#问题：EditText-第二次点击时，弹出来的软键盘会把EditText遮盖掉。" class="headerlink" title="问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。"></a>问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。</h2><p>描述：设置了一个EditText，位置靠近屏幕底部。<br>第一次点击EditText,会跟随软键盘上升，<br>手动隐藏软键盘，<br>再次点击EditText，软键盘弹出后就遮挡了EditText。</p>
-<p>尝试了好多方法<br>在清单文件中对应的activity<br>设置android:windowSoftInputMode=”adjustPan”，<br>设置android:windowSoftInputMode=”stateVisible|adjustResize”，<br>达不到效果.<br>或者把顶级的layout替换成ScrollView，<br>或者说在顶级的Layout上面再加一层ScrollView。<br>都没达到想要的效果。</p>
-<p>解决方法：<br>Android 5.0中<br>android:gravity=”center”和android:inputType=”phone”<br>或者android:singleLine=”true”一起使用时会出现软键盘遮挡问题。<br>在Android 5.0后<br>EditText默认会显示一行，不用设置这个属性：android:singleLine=”true”。<br>android:inputType=”phone”属性改为android:phoneNumber=”true”，解决问题。</p>
+        <h2 id="安装几个库"><a href="#安装几个库" class="headerlink" title="安装几个库"></a>安装几个库</h2><p>npm install –save prop-types<br>npm install –save react-redux<br>npm install –save redux</p>
+<h2 id="添加相应js文件"><a href="#添加相应js文件" class="headerlink" title="添加相应js文件"></a>添加相应js文件</h2><ol>
+<li>Action.js</li>
+</ol>
+<p>export const ADD_REIMBURSE =’ADD_REIMBURSE’;//添加<br>export const DEL_REIMBURSE =’DEL_REIMBURSE’;//删除</p>
+<p>export function AddBeimburse(data) {<br>    return{<br>        type:ADD_REIMBURSE,<br>        payload:{data}<br>    }<br>}</p>
+<p>export function DelBeimburse(id) {<br>    return{<br>        type:DEL_REIMBURSE,<br>        payload:{id}<br>    }<br>}</p>
+<ol start="2">
+<li>Reducer.js</li>
+</ol>
+<p>import {ADD_REIMBURSE,DEL_REIMBURSE} from ../Action.js;</p>
+<p>const initialState={<br>  addbaoxiao:[],<br>}</p>
+<p>export default function (state=initialState,action) {</p>
+<pre><code>switch(action.type){
+    case ADD_REIMBURSE:{
+        var newData = state.addbaoxiao.concat(action.payload.data)
+        return{
+            ...state,
+            addbaoxiao:newData
+        }
+    }
+    case DEL_REIMBURSE:{
+        var newData = state.addbaoxiao;
+        newData.splice(action.payload.id,1);
+        return{
+            ...state,
+            addbaoxiao:newData
+        }
+    }
+default:
+        return state;
+}</code></pre><p>}</p>
+<ol start="3">
+<li>Store.js</li>
+</ol>
+<p>import { createStore,applyMiddleware } from “redux”;<br>import thunk from ‘redux-thunk’;<br>import rootReducer from ‘./reducers’;</p>
+<p>let store = createStore(rootReducer,applyMiddleware(thunk));</p>
+<p>export default store;</p>
+<h2 id="使用。"><a href="#使用。" class="headerlink" title="使用。"></a>使用。</h2><p>AddModel.js</p>
+<p>import React from “react”;<br>mport {<br>    View,<br>    Text,<br>    TextInput,<br>} from “react-native”;</p>
+<p>class AddModel extends BaseComponent {<br>    constructor(props) {<br>        super(props);<br>        this.state= {<br>            newData: {},<br>        }<br>    }</p>
+<pre><code>this.props.AddData(this.state.newData);
+
+this.props.DelData(index);</code></pre><p>}</p>
+<p>const mapStateToProps = (state) =&gt; state.remburse;<br>const mapDispatchToProps = (dispatch, ownProps) =&gt; {<br>    return {<br>        AddData: (…args) =&gt; dispatch(actions.AddBeimburse(…args)),<br>        DelData: (…args) =&gt; dispatch(actions.DelBeimburse(…args)),<br>    }<br>};<br>export default connect(mapStateToProps, mapDispatchToProps)(AddModel)</p>
+<p>The End.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0uoj94p0000d4qvq34eprr6" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/22/React-Redux-简单使用/" data-id="ck0uoj95i000fd4qvaquwzydq" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Redux/">React Redux</a></li></ul>
 
     </footer>
   </div>
@@ -158,15 +201,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/09/20/React-Native-0-60-Navigation-填坑/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          React Native 0.60 Navigation 填坑
-        
-      </div>
-    </a>
   
+    <a href="/2019/09/22/ES6-语法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6 语法</div>
+    </a>
   
 </nav>
 
@@ -199,7 +238,7 @@
       
         <strong class="toc-title">Content</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题：EditText-第二次点击时，弹出来的软键盘会把EditText遮盖掉。"><span class="toc-number">1.</span> <span class="toc-text">问题：EditText 第二次点击时，弹出来的软键盘会把EditText遮盖掉。</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装几个库"><span class="toc-number">1.</span> <span class="toc-text">安装几个库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加相应js文件"><span class="toc-number">2.</span> <span class="toc-text">添加相应js文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用。"><span class="toc-number">3.</span> <span class="toc-text">使用。</span></a></li></ol>
           </div>
       </div>
     </div>
