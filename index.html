@@ -67,6 +67,89 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-React-Native-Flex-布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/22/React-Native-Flex-布局/" class="article-date">
+  <time datetime="2019-09-22T01:46:24.000Z" itemprop="datePublished">2019-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React-Native/">React Native</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/22/React-Native-Flex-布局/">React Native Flex 布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h2 id="React-Native-Flex布局整理"><a href="#React-Native-Flex布局整理" class="headerlink" title="React-Native Flex布局整理"></a>React-Native Flex布局整理</h2><h3 id="Flex容器属性"><a href="#Flex容器属性" class="headerlink" title="Flex容器属性"></a>Flex容器属性</h3><p> flex-direction || flex-wrap || flex-flow || </p>
+<p> justify-content || align-items || align-content</p>
+<h3 id="flex-direction-决定主轴的方向"><a href="#flex-direction-决定主轴的方向" class="headerlink" title="flex-direction: 决定主轴的方向"></a>flex-direction: 决定主轴的方向</h3><p> flex-direction: row | row-reverse | column | column-reverse;</p>
+<p> 默认值：row，水平方向，起点在左端。</p>
+<p> row-reverse:水平方向，起点在右端</p>
+<p> column:垂直方向，起点在上沿</p>
+<p> column-reverse: 垂直方向，起点在下沿</p>
+<h3 id="flex-wrap-决定容器内项目是否换行"><a href="#flex-wrap-决定容器内项目是否换行" class="headerlink" title="flex-wrap:决定容器内项目是否换行"></a>flex-wrap:决定容器内项目是否换行</h3><p> flex-wrap: nowrap | wrap | wrap-reverse;</p>
+<p> 默认值： nowrap不换行，即当主轴尺寸固定时，当空间不足时，项目尺寸会随之调整而不会挤到下一行</p>
+<p> wrap: 项目主轴总尺寸超出容器时换行，第一行在上方</p>
+<p> wrap-reverse:换行，第一行在下方</p>
+<h3 id="flex-flow-flex-direction-和-flex-wrap的简写形式"><a href="#flex-flow-flex-direction-和-flex-wrap的简写形式" class="headerlink" title="flex-flow: flex-direction 和 flex-wrap的简写形式"></a>flex-flow: flex-direction 和 flex-wrap的简写形式</h3><p> flex-flow: <flex-direction> || <flex-wrap>;</flex-wrap></flex-direction></p>
+<h3 id="justify-content-定义了项目在主轴的对齐方式。"><a href="#justify-content-定义了项目在主轴的对齐方式。" class="headerlink" title="justify-content: 定义了项目在主轴的对齐方式。"></a>justify-content: 定义了项目在主轴的对齐方式。</h3><p> justify-content: flex-start | flex-end | center | space-between | space-around;</p>
+<p> 水平方向时测试，即flex-direction: row</p>
+<p> 默认值：flex-start 左对齐</p>
+<p> flex-end:右对齐</p>
+<p> center：居中</p>
+<p> space-between:两端对齐，项目之间的间隔相等，即剩余空间等分成间隙</p>
+<p> space-around：每个项目两侧的间隔相等，所以项目之间的间隔比项目与边缘的间隔大一倍。</p>
+<h3 id="align-items：定义了项目在交叉轴上的对齐方式"><a href="#align-items：定义了项目在交叉轴上的对齐方式" class="headerlink" title="align-items：定义了项目在交叉轴上的对齐方式"></a>align-items：定义了项目在交叉轴上的对齐方式</h3><p> align-item: flex-start | flex-end | center | baseline | stretch;</p>
+<p> 水平方向时测试，即flex-direction: row</p>
+<p> 默认值为stretch即如果项目未设置高度或者设为auto，将占满整个容器的高度。</p>
+<p> flex-start：交叉轴的起点对齐</p>
+<p> flex-end：交叉轴的终点对齐</p>
+<p> center:交叉轴的中心对齐</p>
+<p> baseline：项目的第一行文字的基线对齐</p>
+<h3 id="align-content-定义了多轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用"><a href="#align-content-定义了多轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用" class="headerlink" title="align-content:定义了多轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用."></a>align-content:定义了多轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用.</h3><p> align-content: flex-start | flex-end | center | space-between | space-around</p>
+<p> 当你flex-wrap设置为nowrap的时候，容器仅存在一根轴线，因为项目不会换行，就不会产生多条轴线。</p>
+<p> 当你flex-wrap设置为wrap的时候，容器可能会出现多条轴线，这时候你就需要去设置多条轴线之间的对齐方式了。</p>
+<p> 水平方向时测试，即flex-direction:row,flex-wrap: wrap</p>
+<p> 默认值为stretch,三条轴线平分容器的垂直方向上的空间。</p>
+<p> flex-start：轴线全部在交叉轴上的起点对齐。</p>
+<p> flex-end:轴线全部在交叉轴上的终点对齐。</p>
+<p> center：轴线全部在交叉轴上的中间对齐。</p>
+<p> space-between: 轴线两端对齐，之间的间隔相等，即剩余空间等分成间隙。</p>
+<p> space-around：每个轴线两侧的间隔相等，所以轴线之间的间隔比轴线与边缘的间隔大一倍。</p>
+<p>The End .</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.7seven.cn/2019/09/22/React-Native-Flex-布局/" data-id="ck0uc7w8d00017gqv3x2mkq1g" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native-Flex/">React Native Flex</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-Android-笔试题题题1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/20/Android-笔试题题题1/" class="article-date">
@@ -146,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/Android-笔试题题题1/" data-id="ck0ru4lxb0004ukqvmr57ry7s" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/Android-笔试题题题1/" data-id="ck0uc7w8600007gqvctw5ukrb" class="article-share-link">Share</a>
       
       
       
@@ -222,7 +305,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/面试锦集/" data-id="ck0ru4lxf0006ukqvr1xei1dx" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/面试锦集/" data-id="ck0uc7w8q000a7gqvlriuhzne" class="article-share-link">Share</a>
       
       
       
@@ -285,7 +368,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-国际化/" data-id="ck0ru4lxd0005ukqv7q2lw25v" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-国际化/" data-id="ck0uc7w8k00047gqv3vvmsjqv" class="article-share-link">Share</a>
       
       
       
@@ -342,7 +425,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0ru4lx50001ukqvsab2zbbo" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0uc7w8o00067gqvamf86z6x" class="article-share-link">Share</a>
       
       
       
@@ -391,7 +474,7 @@ setTimeout(() =&gt; {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0ru4lwy0000ukqvcpu8gile" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" data-id="ck0uc7w8m00057gqvu1mc6l4y" class="article-share-link">Share</a>
       
       
       
@@ -433,7 +516,7 @@ setTimeout(() =&gt; {
   <div class="widget-wrap">
     <h3 class="widget-title categories">Categories</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题集合/">面试题集合</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题集合/">面试题集合</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -443,7 +526,7 @@ setTimeout(() =&gt; {
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/Android-面试笔试题/" style="font-size: 14px;">Android 面试笔试题</a> <a href="/tags/React-Native-0-60/" style="font-size: 14px;">React Native 0.60</a> <a href="/tags/React-Native-i18n/" style="font-size: 14px;">React Native i18n</a> <a href="/tags/React-Native-面试题/" style="font-size: 14px;">React Native 面试题</a>
+      <a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/Android-面试笔试题/" style="font-size: 14px;">Android 面试笔试题</a> <a href="/tags/React-Native-0-60/" style="font-size: 14px;">React Native 0.60</a> <a href="/tags/React-Native-Flex/" style="font-size: 14px;">React Native Flex</a> <a href="/tags/React-Native-i18n/" style="font-size: 14px;">React Native i18n</a> <a href="/tags/React-Native-面试题/" style="font-size: 14px;">React Native 面试题</a>
     </div>
   </div>
 
@@ -453,6 +536,10 @@ setTimeout(() =&gt; {
     <h3 class="widget-title recent-posts">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/09/22/React-Native-Flex-布局/">React Native Flex 布局</a>
+          </li>
         
           <li>
             <a href="/2019/09/20/Android-笔试题题题1/">Android 笔试题题题1</a>
@@ -470,10 +557,6 @@ setTimeout(() =&gt; {
             <a href="/2019/09/20/React-Native-0-60-Navigation-填坑/">React Native 0.60 Navigation 填坑</a>
           </li>
         
-          <li>
-            <a href="/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/">Android EditText 第二次点击被键盘遮挡！</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -483,7 +566,7 @@ setTimeout(() =&gt; {
   <div class="widget-wrap">
     <h3 class="widget-title archive">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
