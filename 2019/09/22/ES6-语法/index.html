@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>React Native 0.60 Navigation 填坑 | BOBOCODING</title>
+  <title>ES6 语法 | BOBOCODING</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="升级 RN0.60 Navigation 报错问题修改实例代码修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigator = Sta">
-<meta name="keywords" content="React Native 0.60">
+  <meta name="description" content="块级作用域 {}ES5 中作用域有：全局作用域、函数作用域。没有块作用域的概念。  ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for语句里面的{ }也属于块作用域。一、声明变量var和let的区别： let不允许重复声明变量;  let不存在变量提升;  let所声明的变量，只能在let命令所在的代码块内有效。  如果未在let语句中初始化变量，则将会自动为其分配JavaS">
+<meta name="keywords" content="JS Java Script">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native 0.60 Navigation 填坑">
-<meta property="og:url" content="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/index.html">
+<meta property="og:title" content="ES6 语法">
+<meta property="og:url" content="http://www.7seven.cn/2019/09/22/ES6-语法/index.html">
 <meta property="og:site_name" content="BOBOCODING">
-<meta property="og:description" content="升级 RN0.60 Navigation 报错问题修改实例代码修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigator = Sta">
+<meta property="og:description" content="块级作用域 {}ES5 中作用域有：全局作用域、函数作用域。没有块作用域的概念。  ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for语句里面的{ }也属于块作用域。一、声明变量var和let的区别： let不允许重复声明变量;  let不存在变量提升;  let所声明的变量，只能在let命令所在的代码块内有效。  如果未在let语句中初始化变量，则将会自动为其分配JavaS">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-20T05:23:46.656Z">
+<meta property="og:updated_time" content="2019-09-22T02:26:31.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native 0.60 Navigation 填坑">
-<meta name="twitter:description" content="升级 RN0.60 Navigation 报错问题修改实例代码修改前 import {StackNavigator,TabNavigator} from ‘react-navigation’; import Home from “../pages/home”;//首页import Details from “../pages/details”;//详情页 const navigator = Sta">
+<meta name="twitter:title" content="ES6 语法">
+<meta name="twitter:description" content="块级作用域 {}ES5 中作用域有：全局作用域、函数作用域。没有块作用域的概念。  ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for语句里面的{ }也属于块作用域。一、声明变量var和let的区别： let不允许重复声明变量;  let不存在变量提升;  let所声明的变量，只能在let命令所在的代码块内有效。  如果未在let语句中初始化变量，则将会自动为其分配JavaS">
   
     <link rel="alternate" href="/atom.xml" title="BOBOCODING" type="application/atom+xml">
   
@@ -69,14 +69,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-React-Native-0-60-Navigation-填坑" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ES6-语法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/20/React-Native-0-60-Navigation-填坑/" class="article-date">
-  <time datetime="2019-09-20T01:59:42.000Z" itemprop="datePublished">2019-09-20</time>
+    <a href="/2019/09/22/ES6-语法/" class="article-date">
+  <time datetime="2019-09-22T02:18:24.000Z" itemprop="datePublished">2019-09-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/React-Native/">React Native</a>
+    <a class="article-category-link" href="/categories/JS/">JS</a>
   </div>
 
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React Native 0.60 Navigation 填坑
+      ES6 语法
     </h1>
   
 
@@ -97,26 +97,39 @@
       
         <!-- Table of Contents -->
         
-        <h2 id="升级-RN0-60-Navigation-报错问题修改"><a href="#升级-RN0-60-Navigation-报错问题修改" class="headerlink" title="升级 RN0.60 Navigation 报错问题修改"></a>升级 RN0.60 Navigation 报错问题修改</h2><h3 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h3><p>修改前</p>
-<p>import {StackNavigator,TabNavigator} from ‘react-navigation’;</p>
-<p>import Home from “../pages/home”;//首页<br>import Details from “../pages/details”;//详情页</p>
-<p>const navigator = StackNavigator({<br>    Home: { screen: Home },<br>    Details: { screen: Details },<br>})</p>
-<p>export default navigator</p>
-<p>修改后</p>
-<p>import React from ‘react’;<br>import { createAppContainer } from ‘react-navigation’;<br>import { createStackNavigator } from ‘react-navigation-stack’;</p>
-<p>import Home from “../pages/home”;//首页<br>import Details from “../pages/details”;//详情页</p>
-<p>const navigator = createStackNavigator({<br>    Home: { screen: Home },<br>    Details: { screen: Details },<br>})</p>
-<p>const App = createAppContainer(navigator)</p>
-<p>export default App</p>
+        <h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域 {}"></a>块级作用域 {}</h2><pre><code>ES5 中作用域有：全局作用域、函数作用域。没有块作用域的概念。
+
+ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for语句里面的{ }也属于块作用域。</code></pre><h2 id="一、声明变量var和let的区别："><a href="#一、声明变量var和let的区别：" class="headerlink" title="一、声明变量var和let的区别："></a>一、声明变量var和let的区别：</h2><ol>
+<li><p>let不允许重复声明变量;</p>
+</li>
+<li><p>let不存在变量提升;</p>
+</li>
+<li><p>let所声明的变量，只能在let命令所在的代码块内有效。</p>
+</li>
+<li><p>如果未在let语句中初始化变量，则将会自动为其分配JavaScript值undefined。</p>
+</li>
+</ol>
+<h2 id="二、let和const两个变量声明命令，他们都具有下面这些特性："><a href="#二、let和const两个变量声明命令，他们都具有下面这些特性：" class="headerlink" title="二、let和const两个变量声明命令，他们都具有下面这些特性："></a>二、let和const两个变量声明命令，他们都具有下面这些特性：</h2><ol>
+<li><p>块局作用域；</p>
+</li>
+<li><p>不存在变量提升，一定声明后才能使用；</p>
+</li>
+<li><p>暂时性死区，在代码块内使用let命令声明变量之前，该变量都是不可用的，不受外部变量影响；</p>
+</li>
+<li><p>在相同作用域范围内不允许重复声明；</p>
+</li>
+</ol>
+<h2 id="三、const具有的特性："><a href="#三、const具有的特性：" class="headerlink" title="三、const具有的特性："></a>三、const具有的特性：</h2><p>const声明的变量不能重新赋值，也因为正是这个规则，const变量声明时一定要先初始化，不能留到以后再赋值，不然就会报错。</p>
+<h2 id="var、let、const的区别"><a href="#var、let、const的区别" class="headerlink" title="var、let、const的区别"></a><em>var、let、const的区别</em></h2><p>var定义的变量，没有块的概念，可以跨块访问, 不能跨函数访问。<br>let定义的变量，只能在块作用域里访问，不能跨块访问，也不能跨函数访问。<br>const用来定义常量，使用时必须初始化(即必须赋值)，只能在块作用域里访问，而且不能修改。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.7seven.cn/2019/09/20/React-Native-0-60-Navigation-填坑/" data-id="ck0ud2nia000584qvlwy92irc" class="article-share-link">Share</a>
+      <a data-url="http://www.7seven.cn/2019/09/22/ES6-语法/" data-id="ck0ud2ni9000484qvw7p2h7zi" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native-0-60/">React Native 0.60</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-Java-Script/">JS Java Script</a></li></ul>
 
     </footer>
   </div>
@@ -166,19 +179,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/09/20/React-Native-国际化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          React Native 国际化
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/20/Android-EditText-第二次点击被键盘遮挡！/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/22/React-Native-Flex-布局/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android EditText 第二次点击被键盘遮挡！</div>
+      <div class="article-nav-title">React Native Flex 布局</div>
     </a>
   
 </nav>
@@ -212,7 +216,7 @@
       
         <strong class="toc-title">Content</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#升级-RN0-60-Navigation-报错问题修改"><span class="toc-number">1.</span> <span class="toc-text">升级 RN0.60 Navigation 报错问题修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例代码"><span class="toc-number">1.1.</span> <span class="toc-text">实例代码</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#块级作用域"><span class="toc-number">1.</span> <span class="toc-text">块级作用域 {}</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、声明变量var和let的区别："><span class="toc-number">2.</span> <span class="toc-text">一、声明变量var和let的区别：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、let和const两个变量声明命令，他们都具有下面这些特性："><span class="toc-number">3.</span> <span class="toc-text">二、let和const两个变量声明命令，他们都具有下面这些特性：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、const具有的特性："><span class="toc-number">4.</span> <span class="toc-text">三、const具有的特性：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#var、let、const的区别"><span class="toc-number">5.</span> <span class="toc-text">var、let、const的区别</span></a></li></ol>
           </div>
       </div>
     </div>
